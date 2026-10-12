@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Vehicle Service - AutoCare Garage</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <h2>AutoCare Garage</h2>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="service.html">Book a Service</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <section class="form-section">
+
+            <h1>Vehicle Service Booking</h1>
+
+            <p>
+                Enter your details and select the services you need.
+            </p>
+
+
+            <!-- Service Booking Form -->
+            <form id="serviceForm" action="process_service.php" method="POST">
+
+
+                <!-- Customer Information -->
+                <fieldset>
+
+                    <legend>Customer Information</legend>
+
+                    <label for="customerName">
+                        Customer Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        name="customerName"
+                        placeholder="Enter your full name"
+                    >
+
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="phone"
+                        name="phone"
+                        placeholder="e.g. 0712345678"
+                    >
+
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="e.g. example@gmail.com"
+                    >
+
+                </fieldset>
+
+
+                <!-- Vehicle Information -->
+                <fieldset>
+
+                    <legend>Vehicle Information</legend>
+
+
+                    <label for="registration">
+                        Vehicle Registration Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="registration"
+                        name="registration"
+                        placeholder="e.g. KDA 123A"
+                    >
+
+
+                    <label for="vehicleType">
+                        Vehicle Type
+                    </label>
+
+                    <select id="vehicleType" name="vehicleType">
+
+                        <option value="">
+                            -- Select Vehicle Type --
+                        </option>
+
+                        <option value="Saloon Car">
+                            Saloon Car
+                        </option>
+
+                        <option value="SUV">
+                            SUV
+                        </option>
+
+                        <option value="Pickup">
+                            Pickup
+                        </option>
+
+                        <option value="Van">
+                            Van
+                        </option>
+
+                    </select>
+
+
+                    <label for="vehicleModel">
+                        Vehicle Model
+                    </label>
+
+                    <input
+                        type="text"
+                        id="vehicleModel"
+                        name="vehicleModel"
+                        placeholder="e.g. Toyota Axio"
+                    >
+
+
+                    <label for="year">
+                        Year of Manufacture
+                    </label>
+
+                    <input
+                        type="number"
+                        id="year"
+                        name="year"
+                        placeholder="e.g. 2020"
+                    >
+
+
+                    <label for="serviceDate">
+                        Preferred Service Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="serviceDate"
+                        name="serviceDate"
+                    >
+
+                </fieldset>
+
+
+                <!-- Services -->
+                <fieldset>
+
+                    <legend>Select Required Services</legend>
+
+
+                    <label class="checkbox">
+                        <input
+                            type="checkbox"
+                            name="services[]"
+                            value="Engine Oil Change"
+                            data-price="3000"
+                        >
+
+                        Engine Oil Change - KSh 3,000
+                    </label>
+
+
+                    <label class="checkbox">
+                        <input
+                            type="checkbox"
+                            name="services[]"
+                            value="Brake Inspection"
+                            data-price="2000"
+                        >
+
+                        Brake Inspection - KSh 2,000
+                    </label>
+
+
+                    <label class="checkbox">
+                        <input
+                            type="checkbox"
+                            name="services[]"
+                            value="Wheel Alignment"
+                            data-price="2500"
+                        >
+
+                        Wheel Alignment - KSh 2,500
+                    </label>
+
+
+                    <label class="checkbox">
+                        <input
+                            type="checkbox"
+                            name="services[]"
+                            value="Computer Diagnosis"
+                            data-price="3500"
+                        >
+
+                        Computer Diagnosis - KSh 3,500
+                    </label>
+
+
+                    <label class="checkbox">
+                        <input
+                            type="checkbox"
+                            name="services[]"
+                            value="Full Service"
+                            data-price="8000"
+                        >
+
+                        Full Service - KSh 8,000
+                    </label>
+
+
+                    <!-- YOUR INDIVIDUAL REQUIREMENT -->
+                    <label class="checkbox">
+                        <input
+                            type="checkbox"
+                            name="services[]"
+                            value="Tyre Balancing"
+                            data-price="2000"
+                        >
+
+                        Tyre Balancing - KSh 2,000
+                    </label>
+
+                </fieldset>
+
+
+                <!-- Dynamic Information -->
+                <div id="selectedServices">
+                    No services selected yet.
+                </div>
+
+
+                <!-- Estimated Cost -->
+                <div class="cost-box">
+
+                    <h2>Estimated Service Cost</h2>
+
+                    <p>
+                        KSh <span id="totalCost">0</span>
+                    </p>
+
+                </div>
+
+
+                <!-- Submit -->
+                <button type="submit">
+                    Book Service
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            &copy; 2026 AutoCare Garage. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
